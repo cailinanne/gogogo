@@ -1,3 +1,7 @@
 out/
 out/*
+bin/
+bin/*
+pkg/
+pkg/*
 .idea/workspace.xml
