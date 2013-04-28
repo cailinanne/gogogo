@@ -10,6 +10,8 @@ func WordCount(s string) map[string]int {
 	m := make(map[string]int)
 
 	for _, value := range tokens{
+		// Relies on the fact that if the map does not contain the key, it returns
+		// the appropriate "zero value" for the type
 		m[value] = m[value] + 1
 	}
 
