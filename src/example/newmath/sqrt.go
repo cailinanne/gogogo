@@ -7,13 +7,23 @@
  */
 package newmath
 
+import (
+	"fmt"
+	"math"
+)
+
 // Sqrt returns an approximation to the square root of x.
 func Sqrt(x float64) float64 {
 	// This is a terrible implementation.
 	// Real code should import "math" and use math.Sqrt.
 	z := 0.0
-	for i := 0; i < 1000; i++ {
+	eps := 1.0
+	for eps > 0.01 {
+		zlast := z
 		z -= (z*z - x) / (2 * x)
+		eps = math.Abs(zlast - z)
+		fmt.Println(eps)
+
 	}
 	return z
 }
